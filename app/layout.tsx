@@ -2,8 +2,8 @@
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hero Cards",
-  description: "Pixel-close hero cards inspired by hey.milo.gg",
+  title: "Kirill Karachev",
+  description: "Site about Kirill Karachev",
 };
 
 export default function RootLayout({
