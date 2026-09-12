@@ -97,22 +97,17 @@ function MediaPlaceholder({
 
 const campScreens = [
   {
-    src: "/images/umschool-camp/tasks-clean.png",
+    src: "/images/umschool-camp/tasks-final.png",
     alt: "Экран заданий Умскул Кэмп",
     className: "camp-screen-tasks",
   },
   {
-    src: "/images/umschool-camp/home-clean.png",
-    alt: "Главный экран Умскул Кэмп",
-    className: "camp-screen-home",
-  },
-  {
-    src: "/images/umschool-camp/raffles-clean.png",
+    src: "/images/umschool-camp/raffles-final.png",
     alt: "Экран розыгрышей Умскул Кэмп",
     className: "camp-screen-raffles",
   },
   {
-    src: "/images/umschool-camp/buddy-clean.png",
+    src: "/images/umschool-camp/buddy-final.png",
     alt: "Экран поиска бадди Умскул Кэмп",
     className: "camp-screen-buddy",
   },
@@ -131,9 +126,9 @@ function CampShowcase() {
             <Image
               src={screen.src}
               alt={screen.alt}
-              width={332}
-              height={534}
-              sizes="(max-width: 720px) 42vw, 22vw"
+              width={946}
+              height={2048}
+              sizes="(max-width: 720px) 43vw, 22vw"
             />
           </figure>
         ))}
