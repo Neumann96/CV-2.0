@@ -31,6 +31,7 @@
   --menu-glow: rgba(82, 91, 98, 0.2);
   --selection-bg: #e8e7e2;
   --selection-ink: #0a0a0b;
+  --scrollbar-thumb: rgba(240, 239, 235, 0.86);
   --grain-opacity: 0.17;
   --display: "Libre Caslon Condensed", Georgia, "Times New Roman", serif;
   --sans: "Interface Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -51,6 +52,7 @@
   --menu-glow: rgba(170, 159, 140, 0.22);
   --selection-bg: #151618;
   --selection-ink: #f0efeb;
+  --scrollbar-thumb: rgba(17, 18, 20, 0.9);
   --grain-opacity: 0.1;
 }
 
@@ -62,7 +64,7 @@ html {
   background: var(--black);
   color: var(--paper);
   scroll-behavior: smooth;
-  scrollbar-color: currentColor var(--black);
+  scrollbar-color: var(--scrollbar-thumb) transparent;
   scrollbar-width: thin;
 }
 
@@ -99,23 +101,28 @@ button {
 ::-webkit-scrollbar {
   width: 8px;
   border-radius: 8px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: currentColor;
+  background: var(--scrollbar-thumb);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: currentColor;
+  background: var(--scrollbar-thumb);
 }
 
-::-webkit-scrollbar-track {
-  background: var(--black);
-}
-
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece,
 ::-webkit-scrollbar-corner {
-  background: var(--black);
+  background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .site-shell {

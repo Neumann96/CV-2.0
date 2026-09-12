@@ -118,7 +118,7 @@ function CampShowcase() {
     <div className="camp-showcase">
       <div className="camp-showcase-label" aria-hidden="true">
         <span>UMSCHOOL CAMP</span>
-        <span>TELEGRAM MINI APP · 2025</span>
+        <span>TELEGRAM MINI APP · 2026</span>
       </div>
       <div className="camp-screen-row">
         {campScreens.map((screen) => (
@@ -139,14 +139,14 @@ function CampShowcase() {
 
 const projectData = [
   {
-    date: "JULY 2025",
+    date: "JULY 2026",
     type: "EDTECH MINI APP",
     title: "Umschool Camp",
     className: "project-camp",
     instruction:
       "Replace with a clean 6–10 sec product capture: profile → tasks → progress → rewards. No device frame.",
     caseLabel: "PRODUCT SCREENS · MINI APP",
-    stats: ["10K+ USERS", "15 CHANNELS", "NEXT.JS", "BASEROW", "2025"],
+    stats: ["10K+ USERS", "15 CHANNELS", "NEXT.JS", "BASEROW", "2026"],
   },
   {
     date: "2025 — NOW",
