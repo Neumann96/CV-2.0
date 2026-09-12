@@ -16,6 +16,7 @@ const clamp = (value: number, min = 0, max = 1) =>
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/Neumann96" },
   { label: "Telegram", href: "https://t.me/nmnn96" },
+  { label: "Instagram", href: "https://www.instagram.com/neumnn96/" },
 ] as const;
 
 type TiltCardProps = {
