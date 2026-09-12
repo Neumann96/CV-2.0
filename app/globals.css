@@ -824,8 +824,8 @@ button {
 
 .camp-screen-tasks {
   top: 19%;
-  left: 2%;
-  transform: rotate(-5deg);
+  left: 50%;
+  transform: translateX(-132%) rotate(-5deg);
 }
 
 .camp-screen-raffles {
@@ -837,8 +837,8 @@ button {
 
 .camp-screen-buddy {
   top: 19%;
-  right: 2%;
-  transform: rotate(5deg);
+  left: 50%;
+  transform: translateX(32%) rotate(5deg);
 }
 
 .project-camp .media-placeholder {
