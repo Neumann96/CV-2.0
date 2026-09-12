@@ -447,13 +447,10 @@ export default function Home() {
         <section id="story" className="story-section">
           <div className="story-line" data-reveal>
             <span>A</span>
-            <span className="inline-frame frame-one" aria-hidden="true">10K</span>
             <span>product</span>
             <span>analyst</span>
-            <span className="inline-frame frame-two" aria-hidden="true">SQL</span>
             <span>turning</span>
             <span>complex</span>
-            <span className="inline-frame frame-three" aria-hidden="true">BUILD</span>
             <span>systems</span>
             <span>into clear</span>
             <span>products</span>
@@ -580,17 +577,6 @@ export default function Home() {
             <span>{copied ? "COPIED ✦" : "GET IN TOUCH · CLICK TO COPY"}</span>
             <strong>KARACHEVKI@GMAIL.COM</strong>
           </button>
-
-          <nav className="contact-socials" aria-label="Contact links">
-            {socialLinks
-              .filter((link) => link.label === "Instagram")
-              .map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
-                  <span>{link.label}</span>
-                  <i aria-hidden="true">↗</i>
-                </a>
-              ))}
-          </nav>
 
           <footer className="site-footer">
             <div>

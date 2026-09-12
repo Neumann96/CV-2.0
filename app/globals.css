@@ -599,37 +599,6 @@ button {
   transform: translateY(0);
 }
 
-.inline-frame {
-  display: inline-grid;
-  width: 1.24em;
-  height: 0.66em;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 0.22em;
-  transform: rotate(-2deg);
-  background:
-    linear-gradient(135deg, rgba(116, 145, 154, 0.62), rgba(16, 22, 27, 0.82)),
-    #182027;
-  font-family: var(--sans);
-  font-size: 0.25em;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.08);
-}
-
-.frame-two {
-  width: 1.05em;
-  transform: rotate(3deg);
-  background: linear-gradient(145deg, #222127, #4a4653 45%, #111416);
-}
-
-.frame-three {
-  width: 1.4em;
-  transform: rotate(-1deg);
-  background: linear-gradient(145deg, #263235, #586d72 45%, #101316);
-}
-
 .story-bio {
   display: grid;
   grid-template-columns: 1fr minmax(260px, 620px) 0.52fr;
@@ -1245,43 +1214,6 @@ button {
   transform-origin: left center;
 }
 
-.contact-socials {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 48px;
-}
-
-.contact-socials a {
-  display: inline-flex;
-  min-width: 132px;
-  min-height: 40px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 0 16px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition:
-    color 240ms ease,
-    background-color 240ms ease,
-    border-color 240ms ease;
-}
-
-.contact-socials a:hover {
-  border-color: var(--paper);
-  color: var(--black);
-  background: var(--paper);
-}
-
-.contact-socials i {
-  font-style: normal;
-}
-
 .site-footer {
   position: absolute;
   right: clamp(18px, 4.4vw, 64px);
@@ -1520,10 +1452,6 @@ button {
     line-height: 0.82;
   }
 
-  .inline-frame {
-    border-radius: 10px;
-  }
-
   .story-bio {
     display: block;
     margin-top: 90px;
@@ -1737,14 +1665,6 @@ button {
     max-width: 100%;
     font-size: clamp(28px, 8vw, 46px);
     white-space: nowrap;
-  }
-
-  .contact-socials {
-    margin-top: 36px;
-  }
-
-  .contact-socials a {
-    min-width: 0;
   }
 
   .site-footer {
