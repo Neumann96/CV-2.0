@@ -570,12 +570,14 @@ export default function Home() {
           </button>
 
           <nav className="contact-socials" aria-label="Contact links">
-            {socialLinks.map((link) => (
-              <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
-                <span>{link.label}</span>
-                <i aria-hidden="true">↗</i>
-              </a>
-            ))}
+            {socialLinks
+              .filter((link) => link.label === "Instagram")
+              .map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+                  <span>{link.label}</span>
+                  <i aria-hidden="true">↗</i>
+                </a>
+              ))}
           </nav>
 
           <footer className="site-footer">
