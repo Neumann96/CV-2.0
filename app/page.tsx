@@ -98,16 +98,19 @@ function MediaPlaceholder({
 const campScreens = [
   {
     src: "/images/umschool-camp/tasks-final.webp",
+    mobileSrc: "/images/umschool-camp/tasks-final-mobile.webp",
     alt: "Экран заданий Умскул Кэмп",
     className: "camp-screen-tasks",
   },
   {
     src: "/images/umschool-camp/raffles-final.webp",
+    mobileSrc: "/images/umschool-camp/raffles-final-mobile.webp",
     alt: "Экран розыгрышей Умскул Кэмп",
     className: "camp-screen-raffles",
   },
   {
     src: "/images/umschool-camp/buddy-final.webp",
+    mobileSrc: "/images/umschool-camp/buddy-final-mobile.webp",
     alt: "Экран поиска бадди Умскул Кэмп",
     className: "camp-screen-buddy",
   },
@@ -123,15 +126,19 @@ function CampShowcase() {
       <div className="camp-screen-row">
         {campScreens.map((screen) => (
           <figure className={`camp-screen ${screen.className}`} key={screen.src}>
-            <Image
-              src={screen.src}
-              alt={screen.alt}
-              width={946}
-              height={2048}
-              sizes="(max-width: 720px) 43vw, 22vw"
-              loading="eager"
-              fetchPriority="high"
-            />
+            <picture>
+              <source media="(max-width: 680px)" srcSet={screen.mobileSrc} />
+              <Image
+                src={screen.src}
+                alt={screen.alt}
+                width={946}
+                height={2048}
+                sizes="(max-width: 680px) 43vw, 22vw"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
           </figure>
         ))}
       </div>
@@ -184,6 +191,7 @@ export default function Home() {
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+    const mobileSceneQuery = window.matchMedia("(max-width: 680px)");
     let scrollFrame = 0;
     let loadTimer = 0;
     let introTimer = 0;
@@ -194,6 +202,8 @@ export default function Home() {
 
     const updateScenes = () => {
       scrollFrame = 0;
+      if (mobileSceneQuery.matches) return;
+
       const viewport = Math.max(window.innerHeight, 1);
       const hero = document.querySelector<HTMLElement>(".hero");
 
@@ -252,6 +262,11 @@ export default function Home() {
     };
 
     const onScroll = () => {
+      if (mobileSceneQuery.matches) return;
+      if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateScenes);
+    };
+
+    const onResize = () => {
       if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateScenes);
     };
 
@@ -280,14 +295,14 @@ export default function Home() {
 
     updateScenes();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll, { passive: true });
+    window.addEventListener("resize", onResize, { passive: true });
 
     return () => {
       window.clearTimeout(loadTimer);
       window.clearTimeout(introTimer);
       revealObserver.disconnect();
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("resize", onResize);
       if (scrollFrame) window.cancelAnimationFrame(scrollFrame);
     };
   }, []);
